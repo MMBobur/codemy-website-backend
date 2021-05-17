@@ -7,15 +7,18 @@ exports.create = (req, res) => {
     img_url:
       req.protocol + "://" + req.get("host") + "/img/" + req.file.filename,
     img_title: req.body.img_title,
-  }
+    card_text: req.body.card_text,
+    card_title: req.body.card_title,
+    rating: req.body.rating,
+  };
   Kurslar.create(acourses)
     .then((data) => {
       res.send(data);
     })
     .catch((err) => {
       res.status(500).send({
-        message: err.message
-      })
+        message: err.message,
+      });
     });
 };
 exports.findAll = (req, res) => {
@@ -52,10 +55,13 @@ exports.update = (req, res) => {
   const acourses = {
     img_url:
       req.protocol + "://" + req.get("host") + "/img/" + req.file.filename,
-    img_title: req.body.img_title
-  }
+    img_title: req.body.img_title,
+    card_text: req.body.card_text,
+    card_title: req.body.card_title,
+    rating: req.body.rating,
+  };
   Kurslar.update(acourses, {
-    where: { id: id }
+    where: { id: id },
   })
     .then((num) => {
       if (num == 1) {
@@ -93,6 +99,6 @@ exports.delete = (req, res) => {
     .catch((err) => {
       res.status(500).send({
         message: "Could not delete Kurslar with id=" + id,
-      })
-    })
+      });
+    });
 };
