@@ -12,6 +12,9 @@ module.exports = {
     body: {
       img_url: Joi.string().required(),
       img_title: Joi.string().required(),
+      card_text: Joi.string().required(),
+      card_title: Joi.string().required(),
+      rating: Joi.string().required(),
     },
   },
 
@@ -22,6 +25,9 @@ module.exports = {
     body: {
       img_url: Joi.string().required(),
       img_title: Joi.string().required(),
+      card_text: Joi.string().required(),
+      card_title: Joi.string().required(),
+      rating: Joi.string().required(),
     },
   },
 
@@ -30,4 +36,4 @@ module.exports = {
       id: Joi.string().required(),
     },
   },
-}
+};

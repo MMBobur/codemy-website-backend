@@ -17,7 +17,34 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         notEmpty: true,
       },
-    }
+    },
+    card_text: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      required: true,
+      maxlength: 100,
+      validate: {
+        notEmpty: true,
+      },
+    },
+    rating: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      required: true,
+      maxlength: 100,
+      validate: {
+        notEmpty: true,
+      },
+    },
+    card_title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      required: true,
+      maxlength: 100,
+      validate: {
+        notEmpty: true,
+      },
+    },
   });
 
   return Kurslar;
