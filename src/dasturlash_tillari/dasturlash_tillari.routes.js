@@ -10,8 +10,8 @@ router.get("/", Dastur.findAll);
 
 router.get("/:id", Dastur.findOne);
 
-router.use(authenticate);
-router.use(permit("admin"));
+// router.use(authenticate);
+// router.use(permit("admin"));
 
 router.post("/", upload.single("file"), Dastur.create);
 

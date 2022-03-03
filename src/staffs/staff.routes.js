@@ -9,8 +9,8 @@ const permit = require("./../util/permission");
 router.get("/", staffController.findAll);
 router.get("/:id", staffController.findOne);
 
-router.use(authenticate);
-router.use(permit("admin"));
+// router.use(authenticate);
+// router.use(permit("admin"));
 
 router.post("/", upload.single("file"), staffController.create);
 

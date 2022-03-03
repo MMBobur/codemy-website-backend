@@ -10,8 +10,8 @@ router.get("/", Kurslar.findAll);
 
 router.get("/:id", Kurslar.findOne);
 
-router.use(authenticate);
-router.use(permit("admin"));
+// router.use(authenticate);
+// router.use(permit("admin"));
 
 router.post("/", upload.single("file"), Kurslar.create);
 

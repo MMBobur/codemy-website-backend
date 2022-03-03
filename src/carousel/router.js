@@ -9,8 +9,8 @@ router.get("/", afoCont.findAll);
 
 router.get("/:id", afoCont.findOne);
 
-router.use(authenticate);
-router.use(permit("admin"));
+// router.use(authenticate);
+// router.use(permit("admin"));
 
 router.post("/", upload.single("file"), afoCont.create);
 

@@ -10,8 +10,8 @@ const permit = require("./../util/permission");
 router.get("/", tutorials.findAll);
 router.get("/:id", tutorials.findOne);
 
-router.use(authenticate);
-router.use(permit("admin"));
+// router.use(authenticate);
+// router.use(permit("admin"));
 
 router.post("/", upload.single("file"), tutorials.create);
 
